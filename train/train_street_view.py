@@ -9,6 +9,8 @@ from keras.applications.imagenet_utils import preprocess_input
 from keras.models import Model
 from keras.layers import Dense, Flatten
 from keras.optimizers import SGD
+from datetime import datetime
+
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from utils import angle_error, RotNetDataGenerator
@@ -58,7 +60,7 @@ if not os.path.exists(output_folder):
 # callbacks
 monitor = 'val_angle_error'
 checkpointer = ModelCheckpoint(
-    filepath=os.path.join(output_folder, model_name + '.hdf5'),
+    filepath=os.path.join(output_folder, model_name + str(datetime.now()) + '.hdf5'),
     monitor=monitor,
     save_best_only=True
 )
