@@ -3,12 +3,12 @@ from __future__ import print_function
 import os
 import sys
 
-from keras.callbacks import ModelCheckpoint, EarlyStopping, TensorBoard, ReduceLROnPlateau
+from tensorflow.keras.callbacks import ModelCheckpoint, EarlyStopping, TensorBoard, ReduceLROnPlateau
 from keras.applications.resnet50 import ResNet50
 from keras.applications.imagenet_utils import preprocess_input
-from keras.models import Model
-from keras.layers import Dense, Flatten
-from keras.optimizers import SGD
+from tensorflow.keras.models import Model
+from tensorflow.keras.layers import Dense, Flatten
+from tensorflow.keras.optimizers import SGD
 from datetime import datetime
 
 
