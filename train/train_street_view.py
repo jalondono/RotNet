@@ -60,9 +60,10 @@ if not os.path.exists(output_folder):
 # callbacks
 monitor = 'val_angle_error'
 checkpointer = ModelCheckpoint(
-    filepath=os.path.join(output_folder, model_name + str(datetime.now()) + '.hdf5'),
+    filepath=os.path.join(output_folder, model_name + str(datetime.now()) + '.h5'),
     monitor=monitor,
-    save_best_only=True
+    save_best_only=True,
+    save_weights_only=False
 )
 reduce_lr = ReduceLROnPlateau(monitor=monitor, patience=3)
 early_stopping = EarlyStopping(monitor=monitor, patience=5)
